@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{93BE5D78-7132-4A99-89BC-A972181335C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zulu.BusinessService</RootNamespace>
+    <AssemblyName>Zulu.BusinessService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Dependencies\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\Dependencies\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\Dependencies\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\Dependencies\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\Dependencies\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="Damage\DamageByProductVariant.cs" />
+    <Compile Include="Damage\DamageService.cs" />
+    <Compile Include="Damage\DamageType.cs" />
+    <Compile Include="Damage\IDamageService.cs" />
+    <Compile Include="Logs\ILogService.cs" />
+    <Compile Include="Logs\Log.cs" />
+    <Compile Include="Logs\LogService.cs" />
+    <Compile Include="Logs\LogSeverityTypeEnum.cs" />
+    <Compile Include="Products\Category.cs" />
+    <Compile Include="Products\IProductService.cs" />
+    <Compile Include="Products\Manufacturer.cs" />
+    <Compile Include="Products\Product.cs" />
+    <Compile Include="Products\ProductCategoryMapping.cs" />
+    <Compile Include="Products\ProductManufacturerMapping.cs" />
+    <Compile Include="Products\ProductService.cs" />
+    <Compile Include="Products\ProductUnit.cs" />
+    <Compile Include="Products\ProductUpdateTypeEnum.cs" />
+    <Compile Include="Products\ProductVariant.cs" />
+    <Compile Include="Sales\ISaleService.cs" />
+    <Compile Include="Sales\Sale.cs" />
+    <Compile Include="Sales\SaleProductVariant.cs" />
+    <Compile Include="Sales\SaleService.cs" />
+    <Compile Include="Sales\SaleStatusTypeEnum.cs" />
+    <Compile Include="Settings\ApplicationSetting.cs" />
+    <Compile Include="Settings\ISettingService.cs" />
+    <Compile Include="Settings\Setting.cs" />
+    <Compile Include="Settings\SettingService.cs" />
+    <Compile Include="StorageMedia\Extension.cs" />
+    <Compile Include="StorageMedia\IMediaService.cs" />
+    <Compile Include="StorageMedia\Media.cs" />
+    <Compile Include="StorageMedia\MediaService.cs" />
+    <Compile Include="StorageMedia\PictureTypeEnum.cs" />
+    <Compile Include="UserControls\ButtonControl.cs" />
+    <Compile Include="UserControls\FormControl.cs" />
+    <Compile Include="UserControls\IUserControlService.cs" />
+    <Compile Include="UserControls\UserControlService.cs" />
+    <Compile Include="Configuration\ZuluConfig.cs" />
+    <Compile Include="Data\Extension.cs" />
+    <Compile Include="Infrastructure\DependencyResolverFactory.cs" />
+    <Compile Include="Infrastructure\IDependencyResolver.cs" />
+    <Compile Include="Infrastructure\IDependencyResolverFactory.cs" />
+    <Compile Include="Infrastructure\IoC.cs" />
+    <Compile Include="Infrastructure\UnityDependencyResolver.cs" />
+    <Compile Include="Infrastructure\UnityPerExecutionContextLifetimeManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users\IUserService.cs" />
+    <Compile Include="Users\User.cs" />
+    <Compile Include="Users\UserAttribute.cs" />
+    <Compile Include="Users\UserRoleAttribute.cs" />
+    <Compile Include="Users\UserRole.cs" />
+    <Compile Include="Users\UserService.cs" />
+    <Compile Include="Util\ZuluHelper.cs" />
+    <Compile Include="ZuluContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Data\ZuluDataModel.edmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\DataSources\Zulu.BusinessService.Data.ZuluDataContext.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Order\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

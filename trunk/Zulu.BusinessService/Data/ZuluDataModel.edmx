@@ -1,0 +1,1141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ZuluPOSClientModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ZuluPOSClientModelStoreContainer">
+          <EntitySet Name="Zulu_ButtonControl" EntityType="ZuluPOSClientModel.Store.Zulu_ButtonControl" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_Category" EntityType="ZuluPOSClientModel.Store.Zulu_Category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_DamageByProductVariant" EntityType="ZuluPOSClientModel.Store.Zulu_DamageByProductVariant" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_DamageType" EntityType="ZuluPOSClientModel.Store.Zulu_DamageType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_FormControl" EntityType="ZuluPOSClientModel.Store.Zulu_FormControl" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_Log" EntityType="ZuluPOSClientModel.Store.Zulu_Log" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_Media" EntityType="ZuluPOSClientModel.Store.Zulu_Media" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_Product" EntityType="ZuluPOSClientModel.Store.Zulu_Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_ProductUnit" EntityType="ZuluPOSClientModel.Store.Zulu_ProductUnit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_ProductVariant" EntityType="ZuluPOSClientModel.Store.Zulu_ProductVariant" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_Sale" EntityType="ZuluPOSClientModel.Store.Zulu_Sale" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_SaleProductVariant" EntityType="ZuluPOSClientModel.Store.Zulu_SaleProductVariant" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_Setting" EntityType="ZuluPOSClientModel.Store.Zulu_Setting" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_Supplier" EntityType="ZuluPOSClientModel.Store.Zulu_Supplier" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_User" EntityType="ZuluPOSClientModel.Store.Zulu_User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_UserAttribute" EntityType="ZuluPOSClientModel.Store.Zulu_UserAttribute" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_UserRole" EntityType="ZuluPOSClientModel.Store.Zulu_UserRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zulu_UserRoleAttribute" EntityType="ZuluPOSClientModel.Store.Zulu_UserRoleAttribute" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Zulu_Button_Zulu_Form" Association="ZuluPOSClientModel.Store.FK_Zulu_Button_Zulu_Form">
+            <End Role="Zulu_FormControl" EntitySet="Zulu_FormControl" />
+            <End Role="Zulu_ButtonControl" EntitySet="Zulu_ButtonControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_DamageByProductVariant_Zulu_DamageType" Association="ZuluPOSClientModel.Store.FK_Zulu_DamageByProductVariant_Zulu_DamageType">
+            <End Role="Zulu_DamageType" EntitySet="Zulu_DamageType" />
+            <End Role="Zulu_DamageByProductVariant" EntitySet="Zulu_DamageByProductVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_DamageByProductVariant_Zulu_ProductVariant" Association="ZuluPOSClientModel.Store.FK_Zulu_DamageByProductVariant_Zulu_ProductVariant">
+            <End Role="Zulu_ProductVariant" EntitySet="Zulu_ProductVariant" />
+            <End Role="Zulu_DamageByProductVariant" EntitySet="Zulu_DamageByProductVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_OrderProductVariant_Zulu_Order" Association="ZuluPOSClientModel.Store.FK_Zulu_OrderProductVariant_Zulu_Order">
+            <End Role="Zulu_Sale" EntitySet="Zulu_Sale" />
+            <End Role="Zulu_SaleProductVariant" EntitySet="Zulu_SaleProductVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_Product_Zulu_Category" Association="ZuluPOSClientModel.Store.FK_Zulu_Product_Zulu_Category">
+            <End Role="Zulu_Category" EntitySet="Zulu_Category" />
+            <End Role="Zulu_Product" EntitySet="Zulu_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_ProductVariant_Zulu_Product" Association="ZuluPOSClientModel.Store.FK_Zulu_ProductVariant_Zulu_Product">
+            <End Role="Zulu_Product" EntitySet="Zulu_Product" />
+            <End Role="Zulu_ProductVariant" EntitySet="Zulu_ProductVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_ProductVariant_Zulu_Supplier" Association="ZuluPOSClientModel.Store.FK_Zulu_ProductVariant_Zulu_Supplier">
+            <End Role="Zulu_Supplier" EntitySet="Zulu_Supplier" />
+            <End Role="Zulu_ProductVariant" EntitySet="Zulu_ProductVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_User_Zulu_UserRole" Association="ZuluPOSClientModel.Store.FK_Zulu_User_Zulu_UserRole">
+            <End Role="Zulu_UserRole" EntitySet="Zulu_UserRole" />
+            <End Role="Zulu_User" EntitySet="Zulu_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_UserAttribute_Zulu_User" Association="ZuluPOSClientModel.Store.FK_Zulu_UserAttribute_Zulu_User">
+            <End Role="Zulu_User" EntitySet="Zulu_User" />
+            <End Role="Zulu_UserAttribute" EntitySet="Zulu_UserAttribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_UserRoleAttribute_Zulu_UserRole" Association="ZuluPOSClientModel.Store.FK_Zulu_UserRoleAttribute_Zulu_UserRole">
+            <End Role="Zulu_UserRole" EntitySet="Zulu_UserRole" />
+            <End Role="Zulu_UserRoleAttribute" EntitySet="Zulu_UserRoleAttribute" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Zulu_ButtonControl">
+          <Key>
+            <PropertyRef Name="ButtonID" />
+          </Key>
+          <Property Name="ButtonID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FormID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Zulu_Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="ParentCategoryID" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Zulu_DamageByProductVariant">
+          <Key>
+            <PropertyRef Name="DamageByProductVariantID" />
+          </Key>
+          <Property Name="DamageByProductVariantID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DamageTypeID" Type="int" />
+          <Property Name="ProductVariantID" Type="int" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="DamagePrice" Type="money" />
+          <Property Name="UserGUID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Zulu_DamageType">
+          <Key>
+            <PropertyRef Name="DamageTypeID" />
+          </Key>
+          <Property Name="DamageTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="nvarchar" MaxLength="450" />
+          <Property Name="Description" Type="nvarchar" MaxLength="550" />
+          <Property Name="IsReturnable" Type="bit" />
+        </EntityType>
+        <EntityType Name="Zulu_FormControl">
+          <Key>
+            <PropertyRef Name="FormID" />
+          </Key>
+          <Property Name="FormID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Zulu_Log">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Severity" Type="int" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="FormName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Exception" Type="nvarchar(max)" />
+          <Property Name="Message" Type="nvarchar" MaxLength="1250" />
+        </EntityType>
+        <EntityType Name="Zulu_Media">
+          <Key>
+            <PropertyRef Name="MediaID" />
+          </Key>
+          <Property Name="MediaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PictureBinary" Type="varbinary(max)" />
+          <Property Name="MimeType" Type="nvarchar" MaxLength="450" />
+          <Property Name="IsNew" Type="bit" />
+        </EntityType>
+        <EntityType Name="Zulu_Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Description" Type="nvarchar" MaxLength="450" />
+          <Property Name="CountryOfOriginID" Type="int" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Zulu_ProductUnit">
+          <Key>
+            <PropertyRef Name="ProductUnitID" />
+          </Key>
+          <Property Name="ProductUnitID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Description" Type="nvarchar" MaxLength="450" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Zulu_ProductVariant">
+          <Key>
+            <PropertyRef Name="ProductVariantID" />
+          </Key>
+          <Property Name="ProductVariantID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="BarCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="ManufacturerID" Type="int" />
+          <Property Name="RestrictedUnder18" Type="bit" />
+          <Property Name="StockQuantity" Type="int" />
+          <Property Name="DisplayStockQuantity" Type="bit" />
+          <Property Name="MinimumStockQuantity" Type="int" />
+          <Property Name="LowStockActivity" Type="int" />
+          <Property Name="NotifyForQuantityBelow" Type="int" />
+          <Property Name="SellingPrice" Type="money" />
+          <Property Name="BuyingPrice" Type="money" />
+          <Property Name="PictureID" Type="int" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Zulu_Sale">
+          <Key>
+            <PropertyRef Name="SaleID" />
+          </Key>
+          <Property Name="SaleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VoucherNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="MemberID" Type="int" />
+          <Property Name="SellerID" Type="int" />
+          <Property Name="SaleSubTotalExcTax" Type="money" />
+          <Property Name="SaleSubTotalIncTax" Type="money" />
+          <Property Name="SaleTotalDiscount" Type="money" />
+          <Property Name="TaxRate" Type="nvarchar" MaxLength="250" />
+          <Property Name="SaleTax" Type="money" />
+          <Property Name="SaleTotal" Type="money" />
+          <Property Name="RefundedAmount" Type="money" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="SaleTotalQuantity" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="SaleStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Zulu_SaleProductVariant">
+          <Key>
+            <PropertyRef Name="SaleProductVariantID" />
+          </Key>
+          <Property Name="SaleProductVariantID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SaleID" Type="int" />
+          <Property Name="ProductVariantBarCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="UnitPriceIncTax" Type="money" />
+          <Property Name="UnitPriceExcTax" Type="money" />
+          <Property Name="UnitDiscount" Type="money" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="ReturnQuantity" Type="int" />
+          <Property Name="UnitTotal" Type="money" />
+          <Property Name="ReturnTotal" Type="money" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Zulu_Setting">
+          <Key>
+            <PropertyRef Name="SettingID" />
+          </Key>
+          <Property Name="SettingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Value" Type="nvarchar" MaxLength="250" />
+          <Property Name="Description" Type="nvarchar" MaxLength="550" />
+        </EntityType>
+        <EntityType Name="Zulu_Supplier">
+          <Key>
+            <PropertyRef Name="SupplierID" />
+          </Key>
+          <Property Name="SupplierID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Zulu_User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserGUID" Type="uniqueidentifier" />
+          <Property Name="UserRoleID" Type="int" />
+          <Property Name="MediaID" Type="int" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="450" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="NRCNumber" Type="nvarchar" MaxLength="150" />
+          <Property Name="Username" Type="nvarchar" MaxLength="150" />
+          <Property Name="PasswordHash" Type="nvarchar" MaxLength="450" />
+          <Property Name="Salt" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="250" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="250" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="250" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="250" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="RegistrationDate" Type="datetime" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="IsMember" Type="bit" />
+        </EntityType>
+        <EntityType Name="Zulu_UserAttribute">
+          <Key>
+            <PropertyRef Name="UserAttributeID" />
+          </Key>
+          <Property Name="UserAttributeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="AttributeKey" Type="nvarchar(max)" />
+          <Property Name="Value" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Zulu_UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Name="UserRoleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Zulu_UserRoleAttribute">
+          <Key>
+            <PropertyRef Name="UserRoleAttributeID" />
+          </Key>
+          <Property Name="UserRoleAttributeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserRoleID" Type="int" />
+          <Property Name="AttributeKey" Type="nvarchar" MaxLength="450" />
+          <Property Name="Value" Type="nvarchar" MaxLength="550" />
+        </EntityType>
+        <Association Name="FK_Zulu_Button_Zulu_Form">
+          <End Role="Zulu_FormControl" Type="ZuluPOSClientModel.Store.Zulu_FormControl" Multiplicity="0..1" />
+          <End Role="Zulu_ButtonControl" Type="ZuluPOSClientModel.Store.Zulu_ButtonControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_FormControl">
+              <PropertyRef Name="FormID" />
+            </Principal>
+            <Dependent Role="Zulu_ButtonControl">
+              <PropertyRef Name="FormID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_DamageByProductVariant_Zulu_DamageType">
+          <End Role="Zulu_DamageType" Type="ZuluPOSClientModel.Store.Zulu_DamageType" Multiplicity="0..1" />
+          <End Role="Zulu_DamageByProductVariant" Type="ZuluPOSClientModel.Store.Zulu_DamageByProductVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_DamageType">
+              <PropertyRef Name="DamageTypeID" />
+            </Principal>
+            <Dependent Role="Zulu_DamageByProductVariant">
+              <PropertyRef Name="DamageTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_DamageByProductVariant_Zulu_ProductVariant">
+          <End Role="Zulu_ProductVariant" Type="ZuluPOSClientModel.Store.Zulu_ProductVariant" Multiplicity="0..1" />
+          <End Role="Zulu_DamageByProductVariant" Type="ZuluPOSClientModel.Store.Zulu_DamageByProductVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_ProductVariant">
+              <PropertyRef Name="ProductVariantID" />
+            </Principal>
+            <Dependent Role="Zulu_DamageByProductVariant">
+              <PropertyRef Name="ProductVariantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_OrderProductVariant_Zulu_Order">
+          <End Role="Zulu_Sale" Type="ZuluPOSClientModel.Store.Zulu_Sale" Multiplicity="0..1" />
+          <End Role="Zulu_SaleProductVariant" Type="ZuluPOSClientModel.Store.Zulu_SaleProductVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_Sale">
+              <PropertyRef Name="SaleID" />
+            </Principal>
+            <Dependent Role="Zulu_SaleProductVariant">
+              <PropertyRef Name="SaleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_Product_Zulu_Category">
+          <End Role="Zulu_Category" Type="ZuluPOSClientModel.Store.Zulu_Category" Multiplicity="0..1" />
+          <End Role="Zulu_Product" Type="ZuluPOSClientModel.Store.Zulu_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Zulu_Product">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_ProductVariant_Zulu_Product">
+          <End Role="Zulu_Product" Type="ZuluPOSClientModel.Store.Zulu_Product" Multiplicity="0..1" />
+          <End Role="Zulu_ProductVariant" Type="ZuluPOSClientModel.Store.Zulu_ProductVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Zulu_ProductVariant">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_ProductVariant_Zulu_Supplier">
+          <End Role="Zulu_Supplier" Type="ZuluPOSClientModel.Store.Zulu_Supplier" Multiplicity="0..1" />
+          <End Role="Zulu_ProductVariant" Type="ZuluPOSClientModel.Store.Zulu_ProductVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_Supplier">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="Zulu_ProductVariant">
+              <PropertyRef Name="ManufacturerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_User_Zulu_UserRole">
+          <End Role="Zulu_UserRole" Type="ZuluPOSClientModel.Store.Zulu_UserRole" Multiplicity="0..1" />
+          <End Role="Zulu_User" Type="ZuluPOSClientModel.Store.Zulu_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_UserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="Zulu_User">
+              <PropertyRef Name="UserRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_UserAttribute_Zulu_User">
+          <End Role="Zulu_User" Type="ZuluPOSClientModel.Store.Zulu_User" Multiplicity="0..1" />
+          <End Role="Zulu_UserAttribute" Type="ZuluPOSClientModel.Store.Zulu_UserAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Zulu_UserAttribute">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_UserRoleAttribute_Zulu_UserRole">
+          <End Role="Zulu_UserRole" Type="ZuluPOSClientModel.Store.Zulu_UserRole" Multiplicity="0..1" />
+          <End Role="Zulu_UserRoleAttribute" Type="ZuluPOSClientModel.Store.Zulu_UserRoleAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_UserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="Zulu_UserRoleAttribute">
+              <PropertyRef Name="UserRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ZuluPOSClientModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ZuluDataContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ButtonControls" EntityType="ZuluPOSClientModel.ButtonControl" />
+          <EntitySet Name="Categories" EntityType="ZuluPOSClientModel.Category" />
+          <EntitySet Name="DamageByProductVariants" EntityType="ZuluPOSClientModel.DamageByProductVariant" />
+          <EntitySet Name="DamageTypes" EntityType="ZuluPOSClientModel.DamageType" />
+          <EntitySet Name="FormControls" EntityType="ZuluPOSClientModel.FormControl" />
+          <EntitySet Name="Logs" EntityType="ZuluPOSClientModel.Log" />
+          <EntitySet Name="Media" EntityType="ZuluPOSClientModel.Media" />
+          <EntitySet Name="Products" EntityType="ZuluPOSClientModel.Product" />
+          <EntitySet Name="ProductUnits" EntityType="ZuluPOSClientModel.ProductUnit" />
+          <EntitySet Name="ProductVariants" EntityType="ZuluPOSClientModel.ProductVariant" />
+          <EntitySet Name="Sales" EntityType="ZuluPOSClientModel.Sale" />
+          <EntitySet Name="SaleProductVariants" EntityType="ZuluPOSClientModel.SaleProductVariant" />
+          <EntitySet Name="Settings" EntityType="ZuluPOSClientModel.Setting" />
+          <EntitySet Name="Suppliers" EntityType="ZuluPOSClientModel.Supplier" />
+          <EntitySet Name="Users" EntityType="ZuluPOSClientModel.User" />
+          <EntitySet Name="UserAttributes" EntityType="ZuluPOSClientModel.UserAttribute" />
+          <EntitySet Name="UserRoles" EntityType="ZuluPOSClientModel.UserRole" />
+          <EntitySet Name="UserRoleAttributes" EntityType="ZuluPOSClientModel.UserRoleAttribute" />
+          <AssociationSet Name="FK_Zulu_Button_Zulu_Form" Association="ZuluPOSClientModel.FK_Zulu_Button_Zulu_Form">
+            <End Role="Zulu_FormControl" EntitySet="FormControls" />
+            <End Role="Zulu_ButtonControl" EntitySet="ButtonControls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_Product_Zulu_Category" Association="ZuluPOSClientModel.FK_Zulu_Product_Zulu_Category">
+            <End Role="Zulu_Category" EntitySet="Categories" />
+            <End Role="Zulu_Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_DamageByProductVariant_Zulu_DamageType" Association="ZuluPOSClientModel.FK_Zulu_DamageByProductVariant_Zulu_DamageType">
+            <End Role="Zulu_DamageType" EntitySet="DamageTypes" />
+            <End Role="Zulu_DamageByProductVariant" EntitySet="DamageByProductVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_DamageByProductVariant_Zulu_ProductVariant" Association="ZuluPOSClientModel.FK_Zulu_DamageByProductVariant_Zulu_ProductVariant">
+            <End Role="Zulu_ProductVariant" EntitySet="ProductVariants" />
+            <End Role="Zulu_DamageByProductVariant" EntitySet="DamageByProductVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_ProductVariant_Zulu_Product" Association="ZuluPOSClientModel.FK_Zulu_ProductVariant_Zulu_Product">
+            <End Role="Zulu_Product" EntitySet="Products" />
+            <End Role="Zulu_ProductVariant" EntitySet="ProductVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_OrderProductVariant_Zulu_Order" Association="ZuluPOSClientModel.FK_Zulu_OrderProductVariant_Zulu_Order">
+            <End Role="Zulu_Sale" EntitySet="Sales" />
+            <End Role="Zulu_SaleProductVariant" EntitySet="SaleProductVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_User_Zulu_UserRole" Association="ZuluPOSClientModel.FK_Zulu_User_Zulu_UserRole">
+            <End Role="Zulu_UserRole" EntitySet="UserRoles" />
+            <End Role="Zulu_User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_UserAttribute_Zulu_User" Association="ZuluPOSClientModel.FK_Zulu_UserAttribute_Zulu_User">
+            <End Role="Zulu_User" EntitySet="Users" />
+            <End Role="Zulu_UserAttribute" EntitySet="UserAttributes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zulu_UserRoleAttribute_Zulu_UserRole" Association="ZuluPOSClientModel.FK_Zulu_UserRoleAttribute_Zulu_UserRole">
+            <End Role="Zulu_UserRole" EntitySet="UserRoles" />
+            <End Role="Zulu_UserRoleAttribute" EntitySet="UserRoleAttributes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ButtonControl">
+          <Key>
+            <PropertyRef Name="ButtonID" />
+          </Key>
+          <Property Type="Int32" Name="ButtonID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="FormID" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DisplayName" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="npFormControl" Relationship="ZuluPOSClientModel.FK_Zulu_Button_Zulu_Form" FromRole="Zulu_ButtonControl" ToRole="Zulu_FormControl" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Type="Int32" Name="CategoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ParentCategoryID" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="DateTime" Name="CreatedOn" />
+          <Property Type="DateTime" Name="UpdatedOn" />
+          <NavigationProperty Name="Zulu_Product" Relationship="ZuluPOSClientModel.FK_Zulu_Product_Zulu_Category" FromRole="Zulu_Category" ToRole="Zulu_Product" />
+        </EntityType>
+        <EntityType Name="DamageByProductVariant">
+          <Key>
+            <PropertyRef Name="DamageByProductVariantID" />
+          </Key>
+          <Property Type="Int32" Name="DamageByProductVariantID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="DamageTypeID" />
+          <Property Type="Int32" Name="ProductVariantID" />
+          <Property Type="Int32" Name="Quantity" />
+          <Property Type="DateTime" Name="CreatedOn" />
+          <Property Type="Decimal" Name="DamagePrice" Precision="19" Scale="4" />
+          <Property Type="Guid" Name="UserGUID" />
+          <NavigationProperty Name="Zulu_DamageType" Relationship="ZuluPOSClientModel.FK_Zulu_DamageByProductVariant_Zulu_DamageType" FromRole="Zulu_DamageByProductVariant" ToRole="Zulu_DamageType" />
+          <NavigationProperty Name="Zulu_ProductVariant" Relationship="ZuluPOSClientModel.FK_Zulu_DamageByProductVariant_Zulu_ProductVariant" FromRole="Zulu_DamageByProductVariant" ToRole="Zulu_ProductVariant" />
+        </EntityType>
+        <EntityType Name="DamageType">
+          <Key>
+            <PropertyRef Name="DamageTypeID" />
+          </Key>
+          <Property Type="Int32" Name="DamageTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Type" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsReturnable" />
+          <NavigationProperty Name="Zulu_DamageByProductVariant" Relationship="ZuluPOSClientModel.FK_Zulu_DamageByProductVariant_Zulu_DamageType" FromRole="Zulu_DamageType" ToRole="Zulu_DamageByProductVariant" />
+        </EntityType>
+        <EntityType Name="FormControl">
+          <Key>
+            <PropertyRef Name="FormID" />
+          </Key>
+          <Property Type="Int32" Name="FormID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DisplayName" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="npButtonControls" Relationship="ZuluPOSClientModel.FK_Zulu_Button_Zulu_Form" FromRole="Zulu_FormControl" ToRole="Zulu_ButtonControl" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Type="Int32" Name="LogID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserID" />
+          <Property Type="Int32" Name="Severity" />
+          <Property Type="DateTime" Name="CreatedOn" />
+          <Property Type="String" Name="FormName" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Exception" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Message" MaxLength="1250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Media">
+          <Key>
+            <PropertyRef Name="MediaID" />
+          </Key>
+          <Property Type="Int32" Name="MediaID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Binary" Name="PictureBinary" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="MimeType" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsNew" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Type="Int32" Name="ProductID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CountryOfOriginID" />
+          <Property Type="Int32" Name="CategoryID" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="DateTime" Name="CreatedOn" />
+          <Property Type="DateTime" Name="UpdatedOn" />
+          <NavigationProperty Name="Zulu_Category" Relationship="ZuluPOSClientModel.FK_Zulu_Product_Zulu_Category" FromRole="Zulu_Product" ToRole="Zulu_Category" />
+          <NavigationProperty Name="Zulu_ProductVariant" Relationship="ZuluPOSClientModel.FK_Zulu_ProductVariant_Zulu_Product" FromRole="Zulu_Product" ToRole="Zulu_ProductVariant" />
+        </EntityType>
+        <EntityType Name="ProductUnit">
+          <Key>
+            <PropertyRef Name="ProductUnitID" />
+          </Key>
+          <Property Type="Int32" Name="ProductUnitID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="ProductVariant">
+          <Key>
+            <PropertyRef Name="ProductVariantID" />
+          </Key>
+          <Property Type="Int32" Name="ProductVariantID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BarCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ProductID" />
+          <Property Type="Int32" Name="ManufacturerID" />
+          <Property Type="Boolean" Name="RestrictedUnder18" />
+          <Property Type="Int32" Name="StockQuantity" />
+          <Property Type="Boolean" Name="DisplayStockQuantity" />
+          <Property Type="Int32" Name="MinimumStockQuantity" />
+          <Property Type="Int32" Name="LowStockActivity" />
+          <Property Type="Int32" Name="NotifyForQuantityBelow" />
+          <Property Type="Decimal" Name="SellingPrice" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="BuyingPrice" Precision="19" Scale="4" />
+          <Property Type="Int32" Name="PictureID" />
+          <Property Type="DateTime" Name="CreatedOn" />
+          <Property Type="DateTime" Name="UpdatedOn" />
+          <Property Type="Boolean" Name="IsActive" />
+          <NavigationProperty Name="Zulu_DamageByProductVariant" Relationship="ZuluPOSClientModel.FK_Zulu_DamageByProductVariant_Zulu_ProductVariant" FromRole="Zulu_ProductVariant" ToRole="Zulu_DamageByProductVariant" />
+          <NavigationProperty Name="Zulu_Product" Relationship="ZuluPOSClientModel.FK_Zulu_ProductVariant_Zulu_Product" FromRole="Zulu_ProductVariant" ToRole="Zulu_Product" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="SaleID" />
+          </Key>
+          <Property Type="Int32" Name="SaleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VoucherNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MemberID" />
+          <Property Type="Int32" Name="SellerID" />
+          <Property Type="Decimal" Name="SaleSubTotalExcTax" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="SaleSubTotalIncTax" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="SaleTotalDiscount" Precision="19" Scale="4" />
+          <Property Type="String" Name="TaxRate" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="SaleTax" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="SaleTotal" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="RefundedAmount" Precision="19" Scale="4" />
+          <Property Type="DateTime" Name="CreatedOn" />
+          <Property Type="Int32" Name="SaleTotalQuantity" />
+          <Property Type="DateTime" Name="UpdatedOn" />
+          <Property Type="Int32" Name="SaleStatus" />
+          <NavigationProperty Name="Zulu_SaleProductVariant" Relationship="ZuluPOSClientModel.FK_Zulu_OrderProductVariant_Zulu_Order" FromRole="Zulu_Sale" ToRole="Zulu_SaleProductVariant" />
+        </EntityType>
+        <EntityType Name="SaleProductVariant">
+          <Key>
+            <PropertyRef Name="SaleProductVariantID" />
+          </Key>
+          <Property Type="Int32" Name="SaleProductVariantID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="SaleID" />
+          <Property Type="String" Name="ProductVariantBarCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="UnitPriceIncTax" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="UnitPriceExcTax" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="UnitDiscount" Precision="19" Scale="4" />
+          <Property Type="Int32" Name="Quantity" />
+          <Property Type="Int32" Name="ReturnQuantity" />
+          <Property Type="Decimal" Name="UnitTotal" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="ReturnTotal" Precision="19" Scale="4" />
+          <Property Type="String" Name="ProductName" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Zulu_Sale" Relationship="ZuluPOSClientModel.FK_Zulu_OrderProductVariant_Zulu_Order" FromRole="Zulu_SaleProductVariant" ToRole="Zulu_Sale" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="SettingID" />
+          </Key>
+          <Property Type="Int32" Name="SettingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Value" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="550" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="SupplierID" />
+          </Key>
+          <Property Type="Int32" Name="SupplierID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Type="Int32" Name="UserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="UserGUID" />
+          <Property Type="Int32" Name="UserRoleID" />
+          <Property Type="Int32" Name="MediaID" />
+          <Property Type="String" Name="FullName" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Gender" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NRCNumber" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Username" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordHash" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Salt" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address1" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address2" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PhoneNumber" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailAddress" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Active" />
+          <Property Type="Boolean" Name="Deleted" />
+          <Property Type="DateTime" Name="RegistrationDate" />
+          <Property Type="DateTime" Name="UpdatedDate" />
+          <Property Type="DateTime" Name="DateOfBirth" />
+          <Property Type="Boolean" Name="IsMember" />
+          <NavigationProperty Name="Zulu_UserRole" Relationship="ZuluPOSClientModel.FK_Zulu_User_Zulu_UserRole" FromRole="Zulu_User" ToRole="Zulu_UserRole" />
+          <NavigationProperty Name="Zulu_UserAttribute" Relationship="ZuluPOSClientModel.FK_Zulu_UserAttribute_Zulu_User" FromRole="Zulu_User" ToRole="Zulu_UserAttribute" />
+        </EntityType>
+        <EntityType Name="UserAttribute">
+          <Key>
+            <PropertyRef Name="UserAttributeID" />
+          </Key>
+          <Property Type="Int32" Name="UserAttributeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserID" />
+          <Property Type="String" Name="AttributeKey" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Value" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Zulu_User" Relationship="ZuluPOSClientModel.FK_Zulu_UserAttribute_Zulu_User" FromRole="Zulu_UserAttribute" ToRole="Zulu_User" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Type="Int32" Name="UserRoleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="DateTime" Name="CreatedOn" />
+          <Property Type="DateTime" Name="UpdatedOn" />
+          <NavigationProperty Name="npUsers" Relationship="ZuluPOSClientModel.FK_Zulu_User_Zulu_UserRole" FromRole="Zulu_UserRole" ToRole="Zulu_User" />
+          <NavigationProperty Name="npUserRoleAttribute" Relationship="ZuluPOSClientModel.FK_Zulu_UserRoleAttribute_Zulu_UserRole" FromRole="Zulu_UserRole" ToRole="Zulu_UserRoleAttribute" />
+        </EntityType>
+        <EntityType Name="UserRoleAttribute">
+          <Key>
+            <PropertyRef Name="UserRoleAttributeID" />
+          </Key>
+          <Property Type="Int32" Name="UserRoleAttributeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserRoleID" />
+          <Property Type="String" Name="AttributeKey" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Value" MaxLength="550" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Zulu_UserRole" Relationship="ZuluPOSClientModel.FK_Zulu_UserRoleAttribute_Zulu_UserRole" FromRole="Zulu_UserRoleAttribute" ToRole="Zulu_UserRole" />
+        </EntityType>
+        <Association Name="FK_Zulu_Button_Zulu_Form">
+          <End Type="ZuluPOSClientModel.FormControl" Role="Zulu_FormControl" Multiplicity="0..1" />
+          <End Type="ZuluPOSClientModel.ButtonControl" Role="Zulu_ButtonControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_FormControl">
+              <PropertyRef Name="FormID" />
+            </Principal>
+            <Dependent Role="Zulu_ButtonControl">
+              <PropertyRef Name="FormID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_Product_Zulu_Category">
+          <End Type="ZuluPOSClientModel.Category" Role="Zulu_Category" Multiplicity="0..1" />
+          <End Type="ZuluPOSClientModel.Product" Role="Zulu_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Zulu_Product">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_DamageByProductVariant_Zulu_DamageType">
+          <End Type="ZuluPOSClientModel.DamageType" Role="Zulu_DamageType" Multiplicity="0..1" />
+          <End Type="ZuluPOSClientModel.DamageByProductVariant" Role="Zulu_DamageByProductVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_DamageType">
+              <PropertyRef Name="DamageTypeID" />
+            </Principal>
+            <Dependent Role="Zulu_DamageByProductVariant">
+              <PropertyRef Name="DamageTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_DamageByProductVariant_Zulu_ProductVariant">
+          <End Type="ZuluPOSClientModel.ProductVariant" Role="Zulu_ProductVariant" Multiplicity="0..1" />
+          <End Type="ZuluPOSClientModel.DamageByProductVariant" Role="Zulu_DamageByProductVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_ProductVariant">
+              <PropertyRef Name="ProductVariantID" />
+            </Principal>
+            <Dependent Role="Zulu_DamageByProductVariant">
+              <PropertyRef Name="ProductVariantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_ProductVariant_Zulu_Product">
+          <End Type="ZuluPOSClientModel.Product" Role="Zulu_Product" Multiplicity="0..1" />
+          <End Type="ZuluPOSClientModel.ProductVariant" Role="Zulu_ProductVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Zulu_ProductVariant">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_OrderProductVariant_Zulu_Order">
+          <End Type="ZuluPOSClientModel.Sale" Role="Zulu_Sale" Multiplicity="0..1" />
+          <End Type="ZuluPOSClientModel.SaleProductVariant" Role="Zulu_SaleProductVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_Sale">
+              <PropertyRef Name="SaleID" />
+            </Principal>
+            <Dependent Role="Zulu_SaleProductVariant">
+              <PropertyRef Name="SaleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_User_Zulu_UserRole">
+          <End Type="ZuluPOSClientModel.UserRole" Role="Zulu_UserRole" Multiplicity="0..1" />
+          <End Type="ZuluPOSClientModel.User" Role="Zulu_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_UserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="Zulu_User">
+              <PropertyRef Name="UserRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_UserAttribute_Zulu_User">
+          <End Type="ZuluPOSClientModel.User" Role="Zulu_User" Multiplicity="0..1" />
+          <End Type="ZuluPOSClientModel.UserAttribute" Role="Zulu_UserAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Zulu_UserAttribute">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zulu_UserRoleAttribute_Zulu_UserRole">
+          <End Type="ZuluPOSClientModel.UserRole" Role="Zulu_UserRole" Multiplicity="0..1" />
+          <End Type="ZuluPOSClientModel.UserRoleAttribute" Role="Zulu_UserRoleAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zulu_UserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="Zulu_UserRoleAttribute">
+              <PropertyRef Name="UserRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ZuluPOSClientModelStoreContainer" CdmEntityContainer="ZuluDataContext">
+          <EntitySetMapping Name="ButtonControls">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.ButtonControl">
+              <MappingFragment StoreEntitySet="Zulu_ButtonControl">
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FormID" ColumnName="FormID" />
+                <ScalarProperty Name="ButtonID" ColumnName="ButtonID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.Category">
+              <MappingFragment StoreEntitySet="Zulu_Category">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ParentCategoryID" ColumnName="ParentCategoryID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DamageByProductVariants">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.DamageByProductVariant">
+              <MappingFragment StoreEntitySet="Zulu_DamageByProductVariant">
+                <ScalarProperty Name="UserGUID" ColumnName="UserGUID" />
+                <ScalarProperty Name="DamagePrice" ColumnName="DamagePrice" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductVariantID" ColumnName="ProductVariantID" />
+                <ScalarProperty Name="DamageTypeID" ColumnName="DamageTypeID" />
+                <ScalarProperty Name="DamageByProductVariantID" ColumnName="DamageByProductVariantID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DamageTypes">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.DamageType">
+              <MappingFragment StoreEntitySet="Zulu_DamageType">
+                <ScalarProperty Name="IsReturnable" ColumnName="IsReturnable" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="DamageTypeID" ColumnName="DamageTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormControls">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.FormControl">
+              <MappingFragment StoreEntitySet="Zulu_FormControl">
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FormID" ColumnName="FormID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.Log">
+              <MappingFragment StoreEntitySet="Zulu_Log">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Exception" ColumnName="Exception" />
+                <ScalarProperty Name="FormName" ColumnName="FormName" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Severity" ColumnName="Severity" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="LogID" ColumnName="LogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Media">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.Media">
+              <MappingFragment StoreEntitySet="Zulu_Media">
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="MimeType" ColumnName="MimeType" />
+                <ScalarProperty Name="PictureBinary" ColumnName="PictureBinary" />
+                <ScalarProperty Name="MediaID" ColumnName="MediaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.Product">
+              <MappingFragment StoreEntitySet="Zulu_Product">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CountryOfOriginID" ColumnName="CountryOfOriginID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductUnits">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.ProductUnit">
+              <MappingFragment StoreEntitySet="Zulu_ProductUnit">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductUnitID" ColumnName="ProductUnitID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductVariants">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.ProductVariant">
+              <MappingFragment StoreEntitySet="Zulu_ProductVariant">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="PictureID" ColumnName="PictureID" />
+                <ScalarProperty Name="BuyingPrice" ColumnName="BuyingPrice" />
+                <ScalarProperty Name="SellingPrice" ColumnName="SellingPrice" />
+                <ScalarProperty Name="NotifyForQuantityBelow" ColumnName="NotifyForQuantityBelow" />
+                <ScalarProperty Name="LowStockActivity" ColumnName="LowStockActivity" />
+                <ScalarProperty Name="MinimumStockQuantity" ColumnName="MinimumStockQuantity" />
+                <ScalarProperty Name="DisplayStockQuantity" ColumnName="DisplayStockQuantity" />
+                <ScalarProperty Name="StockQuantity" ColumnName="StockQuantity" />
+                <ScalarProperty Name="RestrictedUnder18" ColumnName="RestrictedUnder18" />
+                <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductVariantID" ColumnName="ProductVariantID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sales">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.Sale">
+              <MappingFragment StoreEntitySet="Zulu_Sale">
+                <ScalarProperty Name="SaleStatus" ColumnName="SaleStatus" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="SaleTotalQuantity" ColumnName="SaleTotalQuantity" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="RefundedAmount" ColumnName="RefundedAmount" />
+                <ScalarProperty Name="SaleTotal" ColumnName="SaleTotal" />
+                <ScalarProperty Name="SaleTax" ColumnName="SaleTax" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="SaleTotalDiscount" ColumnName="SaleTotalDiscount" />
+                <ScalarProperty Name="SaleSubTotalIncTax" ColumnName="SaleSubTotalIncTax" />
+                <ScalarProperty Name="SaleSubTotalExcTax" ColumnName="SaleSubTotalExcTax" />
+                <ScalarProperty Name="SellerID" ColumnName="SellerID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="VoucherNumber" ColumnName="VoucherNumber" />
+                <ScalarProperty Name="SaleID" ColumnName="SaleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleProductVariants">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.SaleProductVariant">
+              <MappingFragment StoreEntitySet="Zulu_SaleProductVariant">
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ReturnTotal" ColumnName="ReturnTotal" />
+                <ScalarProperty Name="UnitTotal" ColumnName="UnitTotal" />
+                <ScalarProperty Name="ReturnQuantity" ColumnName="ReturnQuantity" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitDiscount" ColumnName="UnitDiscount" />
+                <ScalarProperty Name="UnitPriceExcTax" ColumnName="UnitPriceExcTax" />
+                <ScalarProperty Name="UnitPriceIncTax" ColumnName="UnitPriceIncTax" />
+                <ScalarProperty Name="ProductVariantBarCode" ColumnName="ProductVariantBarCode" />
+                <ScalarProperty Name="SaleID" ColumnName="SaleID" />
+                <ScalarProperty Name="SaleProductVariantID" ColumnName="SaleProductVariantID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Settings">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.Setting">
+              <MappingFragment StoreEntitySet="Zulu_Setting">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SettingID" ColumnName="SettingID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.Supplier">
+              <MappingFragment StoreEntitySet="Zulu_Supplier">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.User">
+              <MappingFragment StoreEntitySet="Zulu_User">
+                <ScalarProperty Name="IsMember" ColumnName="IsMember" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="NRCNumber" ColumnName="NRCNumber" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="MediaID" ColumnName="MediaID" />
+                <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+                <ScalarProperty Name="UserGUID" ColumnName="UserGUID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAttributes">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.UserAttribute">
+              <MappingFragment StoreEntitySet="Zulu_UserAttribute">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="AttributeKey" ColumnName="AttributeKey" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserAttributeID" ColumnName="UserAttributeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.UserRole">
+              <MappingFragment StoreEntitySet="Zulu_UserRole">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoleAttributes">
+            <EntityTypeMapping TypeName="ZuluPOSClientModel.UserRoleAttribute">
+              <MappingFragment StoreEntitySet="Zulu_UserRoleAttribute">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="AttributeKey" ColumnName="AttributeKey" />
+                <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+                <ScalarProperty Name="UserRoleAttributeID" ColumnName="UserRoleAttributeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ZuluDataModel">
+        <EntityTypeShape EntityType="ZuluPOSClientModel.ButtonControl" Width="1.5" PointX="3" PointY="10.875" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.Category" Width="1.5" PointX="0.75" PointY="2.25" Height="2.5571907552083282" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.DamageByProductVariant" Width="1.5" PointX="7.5" PointY="2.125" Height="2.7494921875000102" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.DamageType" Width="1.5" PointX="5.25" PointY="7.5" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.FormControl" Width="1.5" PointX="0.75" PointY="11" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.Log" Width="1.5" PointX="5.75" PointY="12.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.Media" Width="1.5" PointX="12.75" PointY="10.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.Product" Width="1.5" PointX="3" PointY="2" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.ProductUnit" Width="1.5" PointX="0.75" PointY="13.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.ProductVariant" Width="1.5" PointX="5.25" PointY="1.125" Height="4.8648079427083246" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.Sale" Width="1.5" PointX="9.75" PointY="1" Height="4.0956022135416674" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.SaleProductVariant" Width="1.5" PointX="12" PointY="1.375" Height="3.326396484374996" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.Setting" Width="1.5" PointX="2.75" PointY="13.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.Supplier" Width="1.5" PointX="3" PointY="7.625" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.User" Width="1.5" PointX="10" PointY="6.25" Height="5.2494108072916674" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.UserAttribute" Width="1.5" PointX="12.25" PointY="7.875" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.UserRole" Width="1.5" PointX="7.75" PointY="9" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="ZuluPOSClientModel.UserRoleAttribute" Width="1.5" PointX="10" PointY="12.25" Height="1.9802864583333246" />
+        <AssociationConnector Association="ZuluPOSClientModel.FK_Zulu_Button_Zulu_Form" >
+          <ConnectorPoint PointX="2.25" PointY="11.893992513020834" />
+          <ConnectorPoint PointX="3" PointY="11.893992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZuluPOSClientModel.FK_Zulu_Product_Zulu_Category" >
+          <ConnectorPoint PointX="2.25" PointY="3.5285953776041641" />
+          <ConnectorPoint PointX="3" PointY="3.5285953776041641" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZuluPOSClientModel.FK_Zulu_DamageByProductVariant_Zulu_DamageType" >
+          <ConnectorPoint PointX="6.75" PointY="8.21875" />
+          <ConnectorPoint PointX="7.59375" PointY="8.21875" />
+          <ConnectorPoint PointX="7.59375" PointY="4.87449218750001" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZuluPOSClientModel.FK_Zulu_DamageByProductVariant_Zulu_ProductVariant" >
+          <ConnectorPoint PointX="6.75" PointY="3.4997460937500051" />
+          <ConnectorPoint PointX="7.5" PointY="3.4997460937500051" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZuluPOSClientModel.FK_Zulu_ProductVariant_Zulu_Product" >
+          <ConnectorPoint PointX="4.5" PointY="3.4708968098958337" />
+          <ConnectorPoint PointX="5.25" PointY="3.4708968098958337" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZuluPOSClientModel.FK_Zulu_OrderProductVariant_Zulu_Order" >
+          <ConnectorPoint PointX="11.25" PointY="3.038198242187498" />
+          <ConnectorPoint PointX="12" PointY="3.038198242187498" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZuluPOSClientModel.FK_Zulu_User_Zulu_UserRole" >
+          <ConnectorPoint PointX="9.25" PointY="10.182444661458334" />
+          <ConnectorPoint PointX="10" PointY="10.182444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZuluPOSClientModel.FK_Zulu_UserAttribute_Zulu_User" >
+          <ConnectorPoint PointX="11.5" PointY="8.8651432291666623" />
+          <ConnectorPoint PointX="12.25" PointY="8.8651432291666623" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZuluPOSClientModel.FK_Zulu_UserRoleAttribute_Zulu_UserRole" >
+          <ConnectorPoint PointX="8.5" PointY="11.364889322916667" />
+          <ConnectorPoint PointX="8.5" PointY="13.240143229166662" />
+          <ConnectorPoint PointX="10" PointY="13.240143229166662" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
